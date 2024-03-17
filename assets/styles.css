@@ -2,8 +2,12 @@ h1 {
     color: gray;
 }
 
-body {
+.nav {
     background-color: black;
+}
+
+body {
+    background-color: darkgray;
 }
 
 .nav a:link {
