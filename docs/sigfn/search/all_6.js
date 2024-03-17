@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sigfn_0',['sigfn',['../namespacesigfn.html',1,'']]],
-  ['sigfn_1',['SigFn',['../md_README.html',1,'SigFn'],['../index.html',1,'SigFn']]],
+  ['sigfn_1',['SigFn',['../index.html',1,'']]],
   ['sigfn_2eh_2',['sigfn.h',['../sigfn_8h.html',1,'']]],
   ['sigfn_2ehpp_3',['sigfn.hpp',['../sigfn_8hpp.html',1,'']]],
   ['sigfn_5fhandle_4',['sigfn_handle',['../sigfn_8h.html#ac194b002c7235d3015b4956fb2df8b0e',1,'sigfn.h']]],
