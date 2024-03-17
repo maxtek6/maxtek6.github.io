@@ -51,7 +51,7 @@ body {
 
 .about {
     display: table;
-    border-spacing: 10px; /*Optional*/
+    border-spacing: 0px; /*Optional*/
     padding: 0px 0px 15px 0px;
     width: 70%;
 }
