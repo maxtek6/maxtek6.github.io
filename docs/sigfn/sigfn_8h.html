@@ -83,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>SigFn header file.  
+<p>SigFn C interface.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;signal.h&gt;</code><br />
@@ -118,7 +118,7 @@ Functions</h2></td></tr>
 <tr class="separator:a995408421ed5a43bd2cb545558534897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>SigFn header file. </p>
+<div class="textblock"><p>SigFn C interface. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a35122839b8dccdf3f574cbe4d0fefcbf" name="a35122839b8dccdf3f574cbe4d0fefcbf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35122839b8dccdf3f574cbe4d0fefcbf">&#9670;&#160;</a></span>SIGFN_INVALID_HANDLER</h2>
@@ -216,7 +216,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">signum</td><td>signal to be handled </td></tr>
     <tr><td class="paramname">handler</td><td>function associated with this signal </td></tr>
-    <tr><td class="paramname">userdata</td><td>optional user data to be passed to the function </td></tr>
+    <tr><td class="paramname">userdata</td><td>optional user data passed to the function </td></tr>
   </table>
   </dd>
 </dl>
@@ -241,7 +241,7 @@ Functions</h2></td></tr>
 <p>ignore a specific signal </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">signum</td><td>signal to be ignored </td></tr>
+    <tr><td class="paramname">signum</td><td>signal to ignore </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,7 +266,7 @@ Functions</h2></td></tr>
 <p>reset a specific signal to its default behavior </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">signum</td><td>signal to be reset </td></tr>
+    <tr><td class="paramname">signum</td><td>signal to reset </td></tr>
   </table>
   </dd>
 </dl>
