@@ -1,19 +1,32 @@
 h1 {
     color: gray;
+    height: 100%;
+    margin: 0px;
+    padding: 10px 0px 0px 10px;
+    text-align: left;
 }
 
 body {
-    background-color: darkgray;
+    color: lightgray;
+    background-color: rgb(43, 43, 43);
     margin: 0px;
     padding: 0px;
     height: 100%;
+    font-family: Verdana;
 }
 
 .nav {
     background-color: black;
     margin: 0px;
-    padding: 0px;
+    padding: 0px 10px 10px 10px;
     height: 100%;
+    text-align: right;
+}
+
+.nav img {
+    width: 50px;
+    height: 50px;
+    padding: 10px 10px 0px 0px;
 }
 
 .nav a:link {
@@ -21,19 +34,16 @@ body {
     text-decoration: none;
 }
 
-/* visited link */
 .nav a:visited {
     color: white;
     text-decoration: none;
 }
 
-/* mouse over link */
 .nav a:hover {
     color: gray;
     text-decoration: none;
 }
 
-/* selected link */
 .nav a:active {
     color: gray;
     text-decoration: none;
