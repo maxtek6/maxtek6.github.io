@@ -52,6 +52,7 @@ body {
 .about {
     display: table;
     border-spacing: 10px; /*Optional*/
+    padding: 0px 0px 15px 0px;
     width: 70%;
 }
 
@@ -68,4 +69,24 @@ body {
 .about_bio {
     vertical-align: top;
     display: table-cell;
+}
+
+.about a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.about a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.about a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.nav a:active {
+    color: gray;
+    text-decoration: none;
 }
