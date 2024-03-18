@@ -73,20 +73,20 @@ body {
 
 .about a:link {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .about a:visited {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .about a:hover {
     color: gray;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .nav a:active {
     color: gray;
-    text-decoration: none;
+    text-decoration: underline;
 }
