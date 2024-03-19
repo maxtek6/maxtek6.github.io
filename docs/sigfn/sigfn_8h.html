@@ -98,6 +98,8 @@ Macros</h2></td></tr>
 <tr class="separator:a2fbd9aa09e59d52b012acb188aabc157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35122839b8dccdf3f574cbe4d0fefcbf" id="r_a35122839b8dccdf3f574cbe4d0fefcbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35122839b8dccdf3f574cbe4d0fefcbf">SIGFN_INVALID_HANDLER</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a35122839b8dccdf3f574cbe4d0fefcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca888bd091694c05472e1b91df1a97b" id="r_a1ca888bd091694c05472e1b91df1a97b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a></td></tr>
+<tr class="separator:a1ca888bd091694c05472e1b91df1a97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -107,19 +109,33 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac194b002c7235d3015b4956fb2df8b0e" id="r_ac194b002c7235d3015b4956fb2df8b0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac194b002c7235d3015b4956fb2df8b0e">sigfn_handle</a> (int signum, <a class="el" href="#ad3cd0e347568a82eefedd054cd267cdc">sigfn_handler_func</a> handler, void *userdata)</td></tr>
-<tr class="memdesc:ac194b002c7235d3015b4956fb2df8b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">attach handler to specific signal  <br /></td></tr>
-<tr class="separator:ac194b002c7235d3015b4956fb2df8b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86a453c1c3eab79abd89295c45e3261b" id="r_a86a453c1c3eab79abd89295c45e3261b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86a453c1c3eab79abd89295c45e3261b">sigfn_ignore</a> (int signum)</td></tr>
-<tr class="memdesc:a86a453c1c3eab79abd89295c45e3261b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ignore a specific signal  <br /></td></tr>
-<tr class="separator:a86a453c1c3eab79abd89295c45e3261b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a995408421ed5a43bd2cb545558534897" id="r_a995408421ed5a43bd2cb545558534897"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a995408421ed5a43bd2cb545558534897">sigfn_reset</a> (int signum)</td></tr>
-<tr class="memdesc:a995408421ed5a43bd2cb545558534897"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset a specific signal to its default behavior  <br /></td></tr>
-<tr class="separator:a995408421ed5a43bd2cb545558534897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db157c0707e08bb82cb74f7e7918418" id="r_a8db157c0707e08bb82cb74f7e7918418"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8db157c0707e08bb82cb74f7e7918418">sigfn_handle</a> (int signum, <a class="el" href="#ad3cd0e347568a82eefedd054cd267cdc">sigfn_handler_func</a> handler, void *userdata)</td></tr>
+<tr class="memdesc:a8db157c0707e08bb82cb74f7e7918418"><td class="mdescLeft">&#160;</td><td class="mdescRight">attach handler to specific signal  <br /></td></tr>
+<tr class="separator:a8db157c0707e08bb82cb74f7e7918418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a38eccfb8d6ecf1bf2da77f4e0bedc" id="r_a50a38eccfb8d6ecf1bf2da77f4e0bedc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50a38eccfb8d6ecf1bf2da77f4e0bedc">sigfn_ignore</a> (int signum)</td></tr>
+<tr class="memdesc:a50a38eccfb8d6ecf1bf2da77f4e0bedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ignore a specific signal  <br /></td></tr>
+<tr class="separator:a50a38eccfb8d6ecf1bf2da77f4e0bedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6efeccf92dd62bd575feebc3c047cbbf" id="r_a6efeccf92dd62bd575feebc3c047cbbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6efeccf92dd62bd575feebc3c047cbbf">sigfn_reset</a> (int signum)</td></tr>
+<tr class="memdesc:a6efeccf92dd62bd575feebc3c047cbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset a specific signal to its default behavior  <br /></td></tr>
+<tr class="separator:a6efeccf92dd62bd575feebc3c047cbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SigFn C interface. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1ca888bd091694c05472e1b91df1a97b" name="a1ca888bd091694c05472e1b91df1a97b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca888bd091694c05472e1b91df1a97b">&#9670;&#160;</a></span>DLL_EXPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DLL_EXPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a35122839b8dccdf3f574cbe4d0fefcbf" name="a35122839b8dccdf3f574cbe4d0fefcbf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35122839b8dccdf3f574cbe4d0fefcbf">&#9670;&#160;</a></span>SIGFN_INVALID_HANDLER</h2>
 
@@ -187,14 +203,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac194b002c7235d3015b4956fb2df8b0e" name="ac194b002c7235d3015b4956fb2df8b0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac194b002c7235d3015b4956fb2df8b0e">&#9670;&#160;</a></span>sigfn_handle()</h2>
+<a id="a8db157c0707e08bb82cb74f7e7918418" name="a8db157c0707e08bb82cb74f7e7918418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db157c0707e08bb82cb74f7e7918418">&#9670;&#160;</a></span>sigfn_handle()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int sigfn_handle </td>
+          <td class="memname"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int sigfn_handle </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>signum</em>, </span></td>
         </tr>
@@ -223,14 +239,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a86a453c1c3eab79abd89295c45e3261b" name="a86a453c1c3eab79abd89295c45e3261b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86a453c1c3eab79abd89295c45e3261b">&#9670;&#160;</a></span>sigfn_ignore()</h2>
+<a id="a50a38eccfb8d6ecf1bf2da77f4e0bedc" name="a50a38eccfb8d6ecf1bf2da77f4e0bedc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a38eccfb8d6ecf1bf2da77f4e0bedc">&#9670;&#160;</a></span>sigfn_ignore()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int sigfn_ignore </td>
+          <td class="memname"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int sigfn_ignore </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>signum</em></span></td><td>)</td>
           <td></td>
@@ -248,14 +264,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a995408421ed5a43bd2cb545558534897" name="a995408421ed5a43bd2cb545558534897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a995408421ed5a43bd2cb545558534897">&#9670;&#160;</a></span>sigfn_reset()</h2>
+<a id="a6efeccf92dd62bd575feebc3c047cbbf" name="a6efeccf92dd62bd575feebc3c047cbbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6efeccf92dd62bd575feebc3c047cbbf">&#9670;&#160;</a></span>sigfn_reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int sigfn_reset </td>
+          <td class="memname"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int sigfn_reset </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>signum</em></span></td><td>)</td>
           <td></td>

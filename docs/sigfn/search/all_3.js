@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ignore_0',['ignore',['../namespacesigfn.html#a4b8728ba5db27cd48c79268c5f09b72e',1,'sigfn']]],
-  ['invalid_5fhandler_1',['INVALID_HANDLER',['../namespacesigfn.html#ab2718fceb08588309cb16ed28c927da4',1,'sigfn']]],
-  ['invalid_5fsignum_2',['INVALID_SIGNUM',['../namespacesigfn.html#aa9c0d8f0df130043c53de012c7af6cff',1,'sigfn']]]
+  ['handle_0',['handle',['../namespacesigfn.html#a8516470890ff81228b91edcb85cabe9e',1,'sigfn::handle(int signum, const handler_function &amp;handler_function)'],['../namespacesigfn.html#aae1f4e5d9faa2174bde38a30fa72783b',1,'sigfn::handle(int signum, handler_function &amp;&amp;handler_function)']]],
+  ['handler_5ffunction_1',['handler_function',['../namespacesigfn.html#a5d82ceb198a8f282dcc8dccfbd227d8d',1,'sigfn']]]
 ];

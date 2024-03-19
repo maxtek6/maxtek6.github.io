@@ -106,7 +106,7 @@ C</h2>
 <div class="line">    flag = -1;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// set callback for SIGINT</span></div>
-<div class="line">    <a class="code hl_function" href="sigfn_8h.html#ac194b002c7235d3015b4956fb2df8b0e">sigfn_handle</a>(SIGINT, handle_signal, &amp;flag);</div>
+<div class="line">    <a class="code hl_function" href="sigfn_8h.html#a8db157c0707e08bb82cb74f7e7918418">sigfn_handle</a>(SIGINT, handle_signal, &amp;flag);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// notify user that the program is &quot;paused&quot;</span></div>
 <div class="line">    puts(<span class="stringliteral">&quot;Paused. Press Ctrl+C to exit.&quot;</span>);</div>
@@ -143,7 +143,7 @@ C</h2>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">}</div>
 <div class="ttc" id="asigfn_8h_html"><div class="ttname"><a href="sigfn_8h.html">sigfn.h</a></div><div class="ttdoc">SigFn C interface.</div></div>
-<div class="ttc" id="asigfn_8h_html_ac194b002c7235d3015b4956fb2df8b0e"><div class="ttname"><a href="sigfn_8h.html#ac194b002c7235d3015b4956fb2df8b0e">sigfn_handle</a></div><div class="ttdeci">int sigfn_handle(int signum, sigfn_handler_func handler, void *userdata)</div><div class="ttdoc">attach handler to specific signal</div></div>
+<div class="ttc" id="asigfn_8h_html_a8db157c0707e08bb82cb74f7e7918418"><div class="ttname"><a href="sigfn_8h.html#a8db157c0707e08bb82cb74f7e7918418">sigfn_handle</a></div><div class="ttdeci">DLL_EXPORT int sigfn_handle(int signum, sigfn_handler_func handler, void *userdata)</div><div class="ttdoc">attach handler to specific signal</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 C++</h2>
 <p>Basic SigFn usage in C++:</p>
@@ -155,7 +155,7 @@ C++</h2>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">bool</span> loop;</div>
 <div class="line">    <span class="comment">// set callback for SIGINT</span></div>
-<div class="line">    <a class="code hl_function" href="namespacesigfn.html#a4f8fcf3c3dae8086dcf8612f2e081933">sigfn::handle</a>(SIGINT, [&amp;](<span class="keywordtype">int</span> signum) {</div>
+<div class="line">    <a class="code hl_function" href="namespacesigfn.html#a8516470890ff81228b91edcb85cabe9e">sigfn::handle</a>(SIGINT, [&amp;](<span class="keywordtype">int</span> signum) {</div>
 <div class="line">        std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Received signal: &quot;</span> &lt;&lt; signum &lt;&lt; std::endl;</div>
 <div class="line">        loop = <span class="keyword">false</span>;</div>
 <div class="line">    });</div>
@@ -172,7 +172,7 @@ C++</h2>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacesigfn_html_a4f8fcf3c3dae8086dcf8612f2e081933"><div class="ttname"><a href="namespacesigfn.html#a4f8fcf3c3dae8086dcf8612f2e081933">sigfn::handle</a></div><div class="ttdeci">void handle(int signum, const handler_function &amp;handler_function)</div><div class="ttdoc">attach handler to specific signal using copy semantics</div></div>
+<div class="ttc" id="anamespacesigfn_html_a8516470890ff81228b91edcb85cabe9e"><div class="ttname"><a href="namespacesigfn.html#a8516470890ff81228b91edcb85cabe9e">sigfn::handle</a></div><div class="ttdeci">DLL_EXPORT void handle(int signum, const handler_function &amp;handler_function)</div><div class="ttdoc">attach handler to specific signal using copy semantics</div></div>
 <div class="ttc" id="asigfn_8hpp_html"><div class="ttname"><a href="sigfn_8hpp.html">sigfn.hpp</a></div></div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
