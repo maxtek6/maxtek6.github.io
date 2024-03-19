@@ -96,8 +96,10 @@ Inheritance diagram for sigfn::exception:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acf21d8689a3567527b2d96234d80af10" id="r_acf21d8689a3567527b2d96234d80af10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf21d8689a3567527b2d96234d80af10">exception</a> (int status)</td></tr>
+<tr class="memdesc:acf21d8689a3567527b2d96234d80af10"><td class="mdescLeft">&#160;</td><td class="mdescRight">create an exception based on a status code  <br /></td></tr>
 <tr class="separator:acf21d8689a3567527b2d96234d80af10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb30f4e01db79bd316234502edec24b3" id="r_afb30f4e01db79bd316234502edec24b3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb30f4e01db79bd316234502edec24b3">what</a> () const noexcept override</td></tr>
+<tr class="memdesc:afb30f4e01db79bd316234502edec24b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">what override for std::exception  <br /></td></tr>
 <tr class="separator:afb30f4e01db79bd316234502edec24b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -118,6 +120,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>create an exception based on a status code </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>error code that maps to an error message </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -144,6 +154,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>what override for std::exception </p>
+<dl class="section return"><dt>Returns</dt><dd>null-terminated char buffer containing error message </dd></dl>
 
 </div>
 </div>
