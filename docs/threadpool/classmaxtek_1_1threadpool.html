@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">fails</td><td>if threads is set to zero </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>if threads is set to zero </td></tr>
   </table>
   </dd>
 </dl>
@@ -191,6 +191,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>shut down threadpool by joining threads and rejecting submissions </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the thread pool has already been shut down </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -239,6 +245,12 @@ template&lt;class F , class... Args&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a future holding the asynchronous function result </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the thread pool has been shut down </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

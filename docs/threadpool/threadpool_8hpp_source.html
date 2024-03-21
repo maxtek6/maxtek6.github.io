@@ -131,53 +131,53 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classmaxtek_1_1threadpool.html#a0ee8f22615b38d6960ea033667789a71">   69</a></span>        <a class="code hl_function" href="classmaxtek_1_1threadpool.html#a0ee8f22615b38d6960ea033667789a71">~threadpool</a>();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span>F, <span class="keyword">class</span>... Args&gt;</div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classmaxtek_1_1threadpool.html#aebcaf1fcb1c54de81d77d69dcba6279e">   80</a></span>        std::future&lt;std::result_of_t&lt;F(Args...)&gt;&gt; <a class="code hl_function" href="classmaxtek_1_1threadpool.html#aebcaf1fcb1c54de81d77d69dcba6279e">submit</a>(F &amp;&amp;function, Args &amp;&amp;...args)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            std::shared_ptr&lt;std::packaged_task&lt;std::result_of_t&lt;F(Args...)&gt;()&gt;&gt; packaged_task;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            std::function&lt;void()&gt; work;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            std::future&lt;std::result_of_t&lt;F(Args...)&gt;&gt; result;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            packaged_task = std::make_shared&lt;std::packaged_task&lt;std::result_of_t&lt;F(Args...)&gt;()&gt;&gt;(std::bind(std::forward&lt;F&gt;(function), std::forward&lt;Args&gt;(args)...));</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            result = packaged_task-&gt;get_future();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            work = [packaged_task]()</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                (*packaged_task)();</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            };</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            push_task(std::move(work));</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keyword">template</span> &lt;<span class="keyword">class </span>F, <span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classmaxtek_1_1threadpool.html#aebcaf1fcb1c54de81d77d69dcba6279e">   81</a></span>        std::future&lt;std::result_of_t&lt;F(Args...)&gt;&gt; <a class="code hl_function" href="classmaxtek_1_1threadpool.html#aebcaf1fcb1c54de81d77d69dcba6279e">submit</a>(F &amp;&amp;function, Args &amp;&amp;...args)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            std::shared_ptr&lt;std::packaged_task&lt;std::result_of_t&lt;F(Args...)&gt;()&gt;&gt; packaged_task;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            std::function&lt;void()&gt; work;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            std::future&lt;std::result_of_t&lt;F(Args...)&gt;&gt; result;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            packaged_task = std::make_shared&lt;std::packaged_task&lt;std::result_of_t&lt;F(Args...)&gt;()&gt;&gt;(std::bind(std::forward&lt;F&gt;(function), std::forward&lt;Args&gt;(args)...));</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            result = packaged_task-&gt;get_future();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            work = [packaged_task]()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                (*packaged_task)();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            };</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            push_task(std::move(work));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classmaxtek_1_1threadpool.html#a84eb22cabdb124d0d918728652a27c21">  103</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmaxtek_1_1threadpool.html#a84eb22cabdb124d0d918728652a27c21">active</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classmaxtek_1_1threadpool.html#acf07455ccd2eb75f8b0e4df111813adc">  108</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmaxtek_1_1threadpool.html#acf07455ccd2eb75f8b0e4df111813adc">shutdown</a>();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordtype">void</span> push_task(std::function&lt;<span class="keywordtype">void</span>()&gt; &amp;&amp;task);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">bool</span> pop_task(std::function&lt;<span class="keywordtype">void</span>()&gt; &amp;task);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">size_t</span> num_threads;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordtype">bool</span> _active;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        std::vector&lt;std::thread&gt; _workers;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        std::queue&lt;std::function&lt;void()&gt;&gt; _tasks;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        std::mutex _mutex;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        std::condition_variable _condition;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    };</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classmaxtek_1_1threadpool.html#a84eb22cabdb124d0d918728652a27c21">  104</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmaxtek_1_1threadpool.html#a84eb22cabdb124d0d918728652a27c21">active</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classmaxtek_1_1threadpool.html#acf07455ccd2eb75f8b0e4df111813adc">  110</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classmaxtek_1_1threadpool.html#acf07455ccd2eb75f8b0e4df111813adc">shutdown</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordtype">void</span> push_task(std::function&lt;<span class="keywordtype">void</span>()&gt; &amp;&amp;task);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordtype">bool</span> pop_task(std::function&lt;<span class="keywordtype">void</span>()&gt; &amp;task);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordtype">size_t</span> num_threads;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordtype">bool</span> _active;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        std::vector&lt;std::thread&gt; _workers;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        std::queue&lt;std::function&lt;void()&gt;&gt; _tasks;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        std::mutex _mutex;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        std::condition_variable _condition;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    };</div>
 </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
 </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmaxtek_1_1threadpool_html"><div class="ttname"><a href="classmaxtek_1_1threadpool.html">maxtek::threadpool</a></div><div class="ttdef"><b>Definition</b> threadpool.hpp:55</div></div>
 <div class="ttc" id="aclassmaxtek_1_1threadpool_html_a0ee8f22615b38d6960ea033667789a71"><div class="ttname"><a href="classmaxtek_1_1threadpool.html#a0ee8f22615b38d6960ea033667789a71">maxtek::threadpool::~threadpool</a></div><div class="ttdeci">~threadpool()</div><div class="ttdoc">destroys threadpool after calling shutdown if necessary</div></div>
 <div class="ttc" id="aclassmaxtek_1_1threadpool_html_a5b45e377702b79ac2f1405b5e1ae24f5"><div class="ttname"><a href="classmaxtek_1_1threadpool.html#a5b45e377702b79ac2f1405b5e1ae24f5">maxtek::threadpool::threadpool</a></div><div class="ttdeci">threadpool(size_t threads=std::thread::hardware_concurrency())</div><div class="ttdoc">constructs a new threadpool</div></div>
 <div class="ttc" id="aclassmaxtek_1_1threadpool_html_a84eb22cabdb124d0d918728652a27c21"><div class="ttname"><a href="classmaxtek_1_1threadpool.html#a84eb22cabdb124d0d918728652a27c21">maxtek::threadpool::active</a></div><div class="ttdeci">bool active() const</div><div class="ttdoc">check if the threadpool is active</div></div>
 <div class="ttc" id="aclassmaxtek_1_1threadpool_html_acf07455ccd2eb75f8b0e4df111813adc"><div class="ttname"><a href="classmaxtek_1_1threadpool.html#acf07455ccd2eb75f8b0e4df111813adc">maxtek::threadpool::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">shut down threadpool by joining threads and rejecting submissions</div></div>
-<div class="ttc" id="aclassmaxtek_1_1threadpool_html_aebcaf1fcb1c54de81d77d69dcba6279e"><div class="ttname"><a href="classmaxtek_1_1threadpool.html#aebcaf1fcb1c54de81d77d69dcba6279e">maxtek::threadpool::submit</a></div><div class="ttdeci">std::future&lt; std::result_of_t&lt; F(Args...)&gt; &gt; submit(F &amp;&amp;function, Args &amp;&amp;...args)</div><div class="ttdoc">submits a function with its arguments to the threadpool</div><div class="ttdef"><b>Definition</b> threadpool.hpp:80</div></div>
+<div class="ttc" id="aclassmaxtek_1_1threadpool_html_aebcaf1fcb1c54de81d77d69dcba6279e"><div class="ttname"><a href="classmaxtek_1_1threadpool.html#aebcaf1fcb1c54de81d77d69dcba6279e">maxtek::threadpool::submit</a></div><div class="ttdeci">std::future&lt; std::result_of_t&lt; F(Args...)&gt; &gt; submit(F &amp;&amp;function, Args &amp;&amp;...args)</div><div class="ttdoc">submits a function with its arguments to the threadpool</div><div class="ttdef"><b>Definition</b> threadpool.hpp:81</div></div>
 <div class="ttc" id="anamespacemaxtek_html"><div class="ttname"><a href="namespacemaxtek.html">maxtek</a></div><div class="ttdef"><b>Definition</b> threadpool.hpp:48</div></div>
 <div class="ttc" id="athreadpool_8hpp_html_a1ca888bd091694c05472e1b91df1a97b"><div class="ttname"><a href="threadpool_8hpp.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a></div><div class="ttdeci">#define DLL_EXPORT</div><div class="ttdef"><b>Definition</b> threadpool.hpp:44</div></div>
 </div><!-- fragment --></div><!-- contents -->
