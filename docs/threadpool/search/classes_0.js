@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['threadpool_0',['threadpool',['../classmaxtek_1_1threadpool.html',1,'maxtek']]]
+  ['allows_0',['allows',['../classallows.html',1,'']]]
 ];

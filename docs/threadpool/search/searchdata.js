@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "acmrst~",
-  1: "t",
+  0: "acdmrst~",
+  1: "at",
   2: "m",
   3: "rt",
   4: "ast~",
-  5: "ct"
+  5: "d",
+  6: "ct"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "pages"
+  5: "defines",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Files",
   4: "Functions",
-  5: "Pages"
+  5: "Macros",
+  6: "Pages"
 };
 

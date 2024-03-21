@@ -87,15 +87,20 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b45e377702b79ac2f1405b5e1ae24f5" id="r_a5b45e377702b79ac2f1405b5e1ae24f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b45e377702b79ac2f1405b5e1ae24f5">threadpool</a> (size_t threads=std::thread::hardware_concurrency())</td></tr>
+<tr class="memdesc:a5b45e377702b79ac2f1405b5e1ae24f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructs a new threadpool  <br /></td></tr>
 <tr class="separator:a5b45e377702b79ac2f1405b5e1ae24f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ee8f22615b38d6960ea033667789a71" id="r_a0ee8f22615b38d6960ea033667789a71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ee8f22615b38d6960ea033667789a71">~threadpool</a> ()</td></tr>
+<tr class="memdesc:a0ee8f22615b38d6960ea033667789a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys threadpool after calling shutdown if necessary  <br /></td></tr>
 <tr class="separator:a0ee8f22615b38d6960ea033667789a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebcaf1fcb1c54de81d77d69dcba6279e" id="r_aebcaf1fcb1c54de81d77d69dcba6279e"><td class="memTemplParams" colspan="2">template&lt;class F , class... Args&gt; </td></tr>
 <tr class="memitem:aebcaf1fcb1c54de81d77d69dcba6279e"><td class="memTemplItemLeft" align="right" valign="top">std::future&lt; std::result_of_t&lt; F(Args...)&gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aebcaf1fcb1c54de81d77d69dcba6279e">submit</a> (F &amp;&amp;function, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:aebcaf1fcb1c54de81d77d69dcba6279e"><td class="mdescLeft">&#160;</td><td class="mdescRight">submits a function with its arguments to the threadpool  <br /></td></tr>
 <tr class="separator:aebcaf1fcb1c54de81d77d69dcba6279e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84eb22cabdb124d0d918728652a27c21" id="r_a84eb22cabdb124d0d918728652a27c21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84eb22cabdb124d0d918728652a27c21">active</a> () const</td></tr>
+<tr class="memdesc:a84eb22cabdb124d0d918728652a27c21"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the threadpool is active  <br /></td></tr>
 <tr class="separator:a84eb22cabdb124d0d918728652a27c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf07455ccd2eb75f8b0e4df111813adc" id="r_acf07455ccd2eb75f8b0e4df111813adc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf07455ccd2eb75f8b0e4df111813adc">shutdown</a> ()</td></tr>
+<tr class="memdesc:acf07455ccd2eb75f8b0e4df111813adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">shut down threadpool by joining threads and rejecting submissions  <br /></td></tr>
 <tr class="separator:acf07455ccd2eb75f8b0e4df111813adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -114,6 +119,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>constructs a new threadpool </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">threads</td><td>number of threads to use for constructing the threadpool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">fails</td><td>if threads is set to zero </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0ee8f22615b38d6960ea033667789a71" name="a0ee8f22615b38d6960ea033667789a71"></a>
@@ -130,6 +149,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>destroys threadpool after calling shutdown if necessary </p>
 
 </div>
 </div>
@@ -149,6 +170,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>check if the threadpool is active </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the threadpool is active, false if it has been shut down </dd></dl>
+
 </div>
 </div>
 <a id="acf07455ccd2eb75f8b0e4df111813adc" name="acf07455ccd2eb75f8b0e4df111813adc"></a>
@@ -165,6 +189,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>shut down threadpool by joining threads and rejecting submissions </p>
 
 </div>
 </div>
@@ -196,6 +222,23 @@ template&lt;class F , class... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>submits a function with its arguments to the threadpool </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>function signature </td></tr>
+    <tr><td class="paramname">Args</td><td>function argument types </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>function signature </td></tr>
+    <tr><td class="paramname">args</td><td>arguments to pass to the function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a future holding the asynchronous function result </dd></dl>
 
 </div>
 </div>

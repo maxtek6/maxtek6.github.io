@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['threadpool_0',['C++ Threadpool',['../md_README.html',1,'']]],
-  ['threadpool_1',['threadpool',['../classmaxtek_1_1threadpool.html',1,'maxtek::threadpool'],['../classmaxtek_1_1threadpool.html#a5b45e377702b79ac2f1405b5e1ae24f5',1,'maxtek::threadpool::threadpool()']]],
-  ['threadpool_2ehpp_2',['threadpool.hpp',['../threadpool_8hpp.html',1,'']]]
+  ['shutdown_0',['shutdown',['../classmaxtek_1_1threadpool.html#acf07455ccd2eb75f8b0e4df111813adc',1,'maxtek::threadpool']]],
+  ['submit_1',['submit',['../classmaxtek_1_1threadpool.html#aebcaf1fcb1c54de81d77d69dcba6279e',1,'maxtek::threadpool']]]
 ];
