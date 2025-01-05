@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ignore_0',['ignore',['../namespacesigfn.html#ac871527498d05217e7a8f5d29b3c5704',1,'sigfn']]]
+  ['reset_0',['reset',['../namespacesigfn.html#af94fc79390fb2426a8cc6344c0e257c9',1,'sigfn']]]
 ];
