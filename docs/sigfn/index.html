@@ -155,30 +155,19 @@ C++</h2>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="sigfn_8hpp.html">sigfn.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span> **argv)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keywordtype">bool</span> loop;</div>
-<div class="line">    <span class="comment">// set callback for SIGINT</span></div>
-<div class="line">    <a class="code hl_function" href="namespacesigfn.html#a8516470890ff81228b91edcb85cabe9e">sigfn::handle</a>(SIGINT, [&amp;](<span class="keywordtype">int</span> signum) {</div>
-<div class="line">        std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Received signal: &quot;</span> &lt;&lt; signum &lt;&lt; std::endl;</div>
-<div class="line">        loop = <span class="keyword">false</span>;</div>
-<div class="line">    });</div>
-<div class="line">    </div>
 <div class="line">    <span class="comment">// notify user that the program is &quot;paused&quot;</span></div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Paused. Press Ctrl+C to exit.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">    </div>
-<div class="line">    <span class="comment">// sleep loop until we receive the signal</span></div>
-<div class="line">    loop = <span class="keyword">true</span>;</div>
-<div class="line">    <span class="keywordflow">while</span>(loop)</div>
-<div class="line">    {</div>
-<div class="line">        <span class="comment">// sleep for 100ms</span></div>
-<div class="line">        std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
-<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="namespacesigfn.html#acda1de88ad6081f3dfc8aadda4a3c727">sigfn::wait</a>({SIGINT});</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Received signal: SIGINT&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacesigfn_html_a8516470890ff81228b91edcb85cabe9e"><div class="ttname"><a href="namespacesigfn.html#a8516470890ff81228b91edcb85cabe9e">sigfn::handle</a></div><div class="ttdeci">DLL_EXPORT void handle(int signum, const handler_function &amp;handler_function)</div><div class="ttdoc">attach handler to specific signal using copy semantics</div></div>
+<div class="ttc" id="anamespacesigfn_html_acda1de88ad6081f3dfc8aadda4a3c727"><div class="ttname"><a href="namespacesigfn.html#acda1de88ad6081f3dfc8aadda4a3c727">sigfn::wait</a></div><div class="ttdeci">DLL_EXPORT int wait(std::initializer_list&lt; int &gt; signums)</div><div class="ttdoc">wait for any signal in the list</div></div>
 <div class="ttc" id="asigfn_8hpp_html"><div class="ttname"><a href="sigfn_8hpp.html">sigfn.hpp</a></div><div class="ttdoc">SigFn C++ interface.</div></div>
 </div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
