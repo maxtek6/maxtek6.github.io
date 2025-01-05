@@ -100,17 +100,12 @@ $(function(){ initResizable(false); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
 </div>
 <p><a href="sigfn_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a319c3fdc7c7acd27351fa628807abd22" id="r_a319c3fdc7c7acd27351fa628807abd22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a319c3fdc7c7acd27351fa628807abd22">SIGFN_SUCCESS</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a319c3fdc7c7acd27351fa628807abd22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fbd9aa09e59d52b012acb188aabc157" id="r_a2fbd9aa09e59d52b012acb188aabc157"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fbd9aa09e59d52b012acb188aabc157">SIGFN_INVALID_SIGNUM</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a2fbd9aa09e59d52b012acb188aabc157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35122839b8dccdf3f574cbe4d0fefcbf" id="r_a35122839b8dccdf3f574cbe4d0fefcbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35122839b8dccdf3f574cbe4d0fefcbf">SIGFN_INVALID_HANDLER</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:a35122839b8dccdf3f574cbe4d0fefcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca888bd091694c05472e1b91df1a97b" id="r_a1ca888bd091694c05472e1b91df1a97b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a></td></tr>
 <tr class="separator:a1ca888bd091694c05472e1b91df1a97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -131,6 +126,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a6efeccf92dd62bd575feebc3c047cbbf" id="r_a6efeccf92dd62bd575feebc3c047cbbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6efeccf92dd62bd575feebc3c047cbbf">sigfn_reset</a> (int signum)</td></tr>
 <tr class="memdesc:a6efeccf92dd62bd575feebc3c047cbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset a specific signal to its default behavior  <br /></td></tr>
 <tr class="separator:a6efeccf92dd62bd575feebc3c047cbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a0931c9bd157805c36bcd560dfedd42" id="r_a2a0931c9bd157805c36bcd560dfedd42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a0931c9bd157805c36bcd560dfedd42">sigfn_wait</a> (const int *signums, size_t count, int *received)</td></tr>
+<tr class="memdesc:a2a0931c9bd157805c36bcd560dfedd42"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait for any of the specified signals  <br /></td></tr>
+<tr class="separator:a2a0931c9bd157805c36bcd560dfedd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7785d04ba6c520311c87fa7fd53bab" id="r_a5c7785d04ba6c520311c87fa7fd53bab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c7785d04ba6c520311c87fa7fd53bab">sigfn_wait_for</a> (const int *signums, size_t count, int *received, const struct timeval *timeout)</td></tr>
+<tr class="memdesc:a5c7785d04ba6c520311c87fa7fd53bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait for any of the specified signals with a timeout  <br /></td></tr>
+<tr class="separator:a5c7785d04ba6c520311c87fa7fd53bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754abfe144028ead425449c06bddd4ee" id="r_a754abfe144028ead425449c06bddd4ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a754abfe144028ead425449c06bddd4ee">sigfn_wait_until</a> (const int *signums, size_t count, int *received, const struct timeval *deadline)</td></tr>
+<tr class="memdesc:a754abfe144028ead425449c06bddd4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait for any of the specified signals until a deadline  <br /></td></tr>
+<tr class="separator:a754abfe144028ead425449c06bddd4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d7377fe43f6f31856351fe760561095" id="r_a0d7377fe43f6f31856351fe760561095"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d7377fe43f6f31856351fe760561095">sigfn_error</a> ()</td></tr>
 <tr class="memdesc:a0d7377fe43f6f31856351fe760561095"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the last error message  <br /></td></tr>
 <tr class="separator:a0d7377fe43f6f31856351fe760561095"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,48 +151,6 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define DLL_EXPORT</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a35122839b8dccdf3f574cbe4d0fefcbf" name="a35122839b8dccdf3f574cbe4d0fefcbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35122839b8dccdf3f574cbe4d0fefcbf">&#9670;&#160;</a></span>SIGFN_INVALID_HANDLER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SIGFN_INVALID_HANDLER&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2fbd9aa09e59d52b012acb188aabc157" name="a2fbd9aa09e59d52b012acb188aabc157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fbd9aa09e59d52b012acb188aabc157">&#9670;&#160;</a></span>SIGFN_INVALID_SIGNUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SIGFN_INVALID_SIGNUM&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a319c3fdc7c7acd27351fa628807abd22" name="a319c3fdc7c7acd27351fa628807abd22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a319c3fdc7c7acd27351fa628807abd22">&#9670;&#160;</a></span>SIGFN_SUCCESS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SIGFN_SUCCESS&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -326,6 +288,129 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="a2a0931c9bd157805c36bcd560dfedd42" name="a2a0931c9bd157805c36bcd560dfedd42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0931c9bd157805c36bcd560dfedd42">&#9670;&#160;</a></span>sigfn_wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int sigfn_wait </td>
+          <td>(</td>
+          <td class="paramtype">const int *</td>          <td class="paramname"><span class="paramname"><em>signums</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>received</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>wait for any of the specified signals </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signums</td><td>array of signal numbers </td></tr>
+    <tr><td class="paramname">count</td><td>number of signals in the array </td></tr>
+    <tr><td class="paramname">received</td><td>signal number that was received, can be NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error </dd></dl>
+
+</div>
+</div>
+<a id="a5c7785d04ba6c520311c87fa7fd53bab" name="a5c7785d04ba6c520311c87fa7fd53bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7785d04ba6c520311c87fa7fd53bab">&#9670;&#160;</a></span>sigfn_wait_for()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int sigfn_wait_for </td>
+          <td>(</td>
+          <td class="paramtype">const int *</td>          <td class="paramname"><span class="paramname"><em>signums</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>received</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct timeval *</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>wait for any of the specified signals with a timeout </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signums</td><td>array of signal numbers </td></tr>
+    <tr><td class="paramname">count</td><td>number of signals in the array </td></tr>
+    <tr><td class="paramname">received</td><td>signal number that was received, can be NULL </td></tr>
+    <tr><td class="paramname">timeout</td><td>maximum time to wait </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error, 1 if timed out </dd></dl>
+
+</div>
+</div>
+<a id="a754abfe144028ead425449c06bddd4ee" name="a754abfe144028ead425449c06bddd4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754abfe144028ead425449c06bddd4ee">&#9670;&#160;</a></span>sigfn_wait_until()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int sigfn_wait_until </td>
+          <td>(</td>
+          <td class="paramtype">const int *</td>          <td class="paramname"><span class="paramname"><em>signums</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>received</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct timeval *</td>          <td class="paramname"><span class="paramname"><em>deadline</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>wait for any of the specified signals until a deadline </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signums</td><td>array of signal numbers </td></tr>
+    <tr><td class="paramname">count</td><td>number of signals in the array </td></tr>
+    <tr><td class="paramname">received</td><td>signal number that was received, can be NULL </td></tr>
+    <tr><td class="paramname">deadline</td><td>time to stop waiting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on error, 1 if timed out </dd></dl>
 
 </div>
 </div>

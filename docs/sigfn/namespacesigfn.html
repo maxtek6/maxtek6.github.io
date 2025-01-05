@@ -111,6 +111,12 @@ Functions</h2></td></tr>
 <tr class="memitem:af94fc79390fb2426a8cc6344c0e257c9" id="r_af94fc79390fb2426a8cc6344c0e257c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sigfn_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af94fc79390fb2426a8cc6344c0e257c9">reset</a> (int signum)</td></tr>
 <tr class="memdesc:af94fc79390fb2426a8cc6344c0e257c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset a specific signal to its default behavior  <br /></td></tr>
 <tr class="separator:af94fc79390fb2426a8cc6344c0e257c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda1de88ad6081f3dfc8aadda4a3c727" id="r_acda1de88ad6081f3dfc8aadda4a3c727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sigfn_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acda1de88ad6081f3dfc8aadda4a3c727">wait</a> (std::initializer_list&lt; int &gt; signums)</td></tr>
+<tr class="separator:acda1de88ad6081f3dfc8aadda4a3c727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71796385a6677021e2898b2e51468828" id="r_a71796385a6677021e2898b2e51468828"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sigfn_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> std::optional&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71796385a6677021e2898b2e51468828">wait_for</a> (std::initializer_list&lt; int &gt; signums, const std::chrono::system_clock::duration &amp;timeout)</td></tr>
+<tr class="separator:a71796385a6677021e2898b2e51468828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1484be9f4a89069ff147a32f6f64580c" id="r_a1484be9f4a89069ff147a32f6f64580c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sigfn_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> std::optional&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1484be9f4a89069ff147a32f6f64580c">wait_until</a> (std::initializer_list&lt; int &gt; signums, const std::chrono::system_clock::time_point &amp;deadline)</td></tr>
+<tr class="separator:a1484be9f4a89069ff147a32f6f64580c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a5d82ceb198a8f282dcc8dccfbd227d8d" name="a5d82ceb198a8f282dcc8dccfbd227d8d"></a>
@@ -243,6 +249,65 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="acda1de88ad6081f3dfc8aadda4a3c727" name="acda1de88ad6081f3dfc8aadda4a3c727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acda1de88ad6081f3dfc8aadda4a3c727">&#9670;&#160;</a></span>wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sigfn_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> int sigfn::wait </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em>signums</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71796385a6677021e2898b2e51468828" name="a71796385a6677021e2898b2e51468828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71796385a6677021e2898b2e51468828">&#9670;&#160;</a></span>wait_for()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sigfn_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> std::optional&lt; int &gt; sigfn::wait_for </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em>signums</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::chrono::system_clock::duration &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1484be9f4a89069ff147a32f6f64580c" name="a1484be9f4a89069ff147a32f6f64580c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1484be9f4a89069ff147a32f6f64580c">&#9670;&#160;</a></span>wait_until()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sigfn_8h.html#a1ca888bd091694c05472e1b91df1a97b">DLL_EXPORT</a> std::optional&lt; int &gt; sigfn::wait_until </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em>signums</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::chrono::system_clock::time_point &amp;</td>          <td class="paramname"><span class="paramname"><em>deadline</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
