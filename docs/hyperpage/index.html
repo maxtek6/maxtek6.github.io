@@ -122,9 +122,28 @@ Usage</h1>
 <li><code>hyperpack</code>: A command line tool for archiving web content</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md3"></a>
-<code>hyperpage</code> Usage</h2>
+<code>hyperpage</code></h2>
+<p>Hyperpage is the C++ API provided by this project. It provides all of the interfaces required to utilize the hyperpage database:</p>
+<ul>
+<li><code><a class="el" href="classhyperpage_1_1page.html">hyperpage::page</a></code>: An abstract class representing a single entry in the database. It provides the path, mime type, and content.</li>
+<li><code><a class="el" href="classhyperpage_1_1reader.html">hyperpage::reader</a></code>: Loads pages from the database. Given a path, the reader will provide a pointer to a page if it exists.</li>
+<li><code><a class="el" href="classhyperpage_1_1writer.html">hyperpage::writer</a></code>: Stores pages in the database. Given a page, the writer will create a database entry that can later be loaded by path.</li>
+</ul>
 <h2><a class="anchor" id="autotoc_md4"></a>
-<code>hyperpack</code> Usage</h2>
+<code>hyperpack</code></h2>
+<p>Hyperpack is a command line utility used to create a hyperpage database file:</p>
+<div class="fragment"><div class="line">Usage: hyperpack [--help] [--output VAR] directory</div>
+<div class="line"> </div>
+<div class="line">Positional arguments:</div>
+<div class="line">  directory      Directory to scan for files to pack into the hyperpage database [required]</div>
+<div class="line"> </div>
+<div class="line">Optional arguments:</div>
+<div class="line">  -h, --help     shows help message and exits</div>
+<div class="line">  -o, --output   Output file for the hyperpage database [nargs=0..1] [default: &quot;hyperpage.db&quot;]</div>
+</div><!-- fragment --><p>It will iterate through a given directory, storing its files based on paths relative to the given directory. It will also detect the mime type and store the contents of each file.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Documentation and Example</h2>
+<p>This is only intended to cover basic usage. For more info about the API, see the <a href="https://maxtex6.github.io/docs/hyperpage">docs</a>. To see how hyperpage is used in a basic use case, the <a href="https://github.com/maxtek6/hyperpage/tree/master/example">example</a> should be helpful. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

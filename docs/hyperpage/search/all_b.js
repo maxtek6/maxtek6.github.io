@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['writer_0',['writer',['../classhyperpage_1_1writer.html',1,'hyperpage::writer'],['../classhyperpage_1_1writer.html#af993d4d20d567d9ac8c3bbe43313d722',1,'hyperpage::writer::writer()']]]
+  ['tt_0',['tt',['../index.html#autotoc_md4',1,'&lt;tt&gt;hyperpack&lt;/tt&gt;'],['../index.html#autotoc_md3',1,'&lt;tt&gt;hyperpage&lt;/tt&gt;']]],
+  ['tt_20hyperpack_20tt_1',['&lt;tt&gt;hyperpack&lt;/tt&gt;',['../index.html#autotoc_md4',1,'']]],
+  ['tt_20hyperpage_20tt_2',['&lt;tt&gt;hyperpage&lt;/tt&gt;',['../index.html#autotoc_md3',1,'']]]
 ];

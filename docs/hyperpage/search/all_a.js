@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usage_0',['Usage',['../index.html#autotoc_md4',1,'&lt;tt&gt;hyperpack&lt;/tt&gt; Usage'],['../index.html#autotoc_md3',1,'&lt;tt&gt;hyperpage&lt;/tt&gt; Usage'],['../index.html#autotoc_md2',1,'Usage']]]
+  ['store_0',['store',['../classhyperpage_1_1writer.html#a027c6b9de6186a02bd7c78f6ace82acf',1,'hyperpage::writer']]]
 ];

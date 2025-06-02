@@ -27,8 +27,9 @@ var NAVTREE =
   [ "Hyperpage", "index.html", [
     [ "Requirements", "index.html#autotoc_md1", null ],
     [ "Usage", "index.html#autotoc_md2", [
-      [ "hyperpage Usage", "index.html#autotoc_md3", null ],
-      [ "hyperpack Usage", "index.html#autotoc_md4", null ]
+      [ "hyperpage", "index.html#autotoc_md3", null ],
+      [ "hyperpack", "index.html#autotoc_md4", null ],
+      [ "Documentation and Example", "index.html#autotoc_md5", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
