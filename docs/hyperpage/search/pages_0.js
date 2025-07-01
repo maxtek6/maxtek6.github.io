@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hyperpage_0',['Hyperpage',['../index.html',1,'']]]
+  ['and_20example_0',['Documentation and Example',['../index.html#autotoc_md5',1,'']]]
 ];
