@@ -108,7 +108,7 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2mio_2mio_2README"></a></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
 mio</h1>
-<p><a href="https://github.com/maxtek6/mio/actions/workflows/test.yml"><img src="https://github.com/maxtek6/mio/actions/workflows/test.yml/badge.svg" alt="MIO Test Pipeline" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/maxtek6/mio/actions/workflows/doc.yml"><img src="https://github.com/maxtek6/mio/actions/workflows/doc.yml/badge.svg" alt="MIO Docs Pipeline" style="pointer-events: none;" class="inline"/></a> <a href="https://codecov.io/gh/maxtek6/mio"><img src="https://codecov.io/gh/maxtek6/mio/branch/master/graph/badge.svg" alt="codecov" style="pointer-events: none;" class="inline"/></a></p>
+<p><a href="https://github.com/maxtek6/mio/actions/workflows/test.yml"><img src="https://github.com/maxtek6/mio/actions/workflows/test.yml/badge.svg" alt="MIO Test Pipeline" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/maxtek6/mio/actions/workflows/doc.yml"><img src="https://github.com/maxtek6/mio/actions/workflows/doc.yml/badge.svg" alt="MIO Docs Pipeline" style="pointer-events: none;" class="inline"/></a> <a href="https://codecov.io/gh/maxtek6/mio"><img src="https://codecov.io/gh/maxtek6/mio/branch/master/graph/badge.svg" alt="codecov" style="pointer-events: none;" class="inline"/></a> <a href="https://www.codefactor.io/repository/github/wissem01chiha/mio"><img src="https://www.codefactor.io/repository/github/wissem01chiha/mio/badge" alt="CodeFactor" class="inline"/></a></p>
 <ul>
 <li>Why?<ul>
 <li>How to create a mapping</li>
@@ -135,11 +135,7 @@ Why?</h2>
 <p>Albeit a minor nitpick, Boost.Iostreams implements memory mapped file IO with a <span class="tt">std::shared_ptr</span> to provide shared semantics, even if not needed, and the overhead of the heap allocation may be unnecessary and/or unwanted. In mio, there are two classes to cover the two use-cases: one that is move-only (basically a zero-cost abstraction over the system specific mmapping functions), and the other that acts just like its Boost.Iostreams counterpart, with shared semantics.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 How to create a mapping</h3>
-<blockquote class="doxtable">
-<blockquote class="doxtable">
-<p>Note : the file must exist before creating a mapping. </p>
-</blockquote>
-</blockquote>
+<dl class="section note"><dt>Note</dt><dd>The file must exist before creating a mapping.</dd></dl>
 <p>There are three ways to map a file into memory:</p>
 <ul>
 <li>Using the constructor, which throws a <span class="tt">std::system_error</span> on failure: <div class="fragment"><div class="line"><a class="code hl_typedef" href="namespacemio.html#a16e95fe46bbad947821a1c4d58c80b84">mio::mmap_source</a> mmap(path, offset, size_to_map);</div>
@@ -156,20 +152,10 @@ How to create a mapping</h3>
 <div class="line">mmap.<a class="code hl_function" href="structmio_1_1basic__mmap.html#a0e0448c6898bfe229e5f6f7f83d9536f">map</a>(path, offset, size_to_map, error);</div>
 <div class="ttc" id="astructmio_1_1basic__mmap_html_a0e0448c6898bfe229e5f6f7f83d9536f"><div class="ttname"><a href="structmio_1_1basic__mmap.html#a0e0448c6898bfe229e5f6f7f83d9536f">mio::basic_mmap::map</a></div><div class="ttdeci">void map(const String &amp;path, const size_type &amp;offset, const size_type &amp;length, std::error_code &amp;error)</div></div>
 </div><!-- fragment --> or: <div class="fragment"><div class="line">mmap.<a class="code hl_function" href="structmio_1_1basic__mmap.html#a0e0448c6898bfe229e5f6f7f83d9536f">map</a>(path, error);</div>
-</div><!-- fragment --> <blockquote class="doxtable">
-<blockquote class="doxtable">
-<p><b>Note:</b> The constructors <b>require</b> exceptions to be enabled. If you prefer to build your projects with <span class="tt">-fno-exceptions</span>, you can still use the other ways. </p>
-</blockquote>
-</blockquote>
-</li>
+</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The constructors <b>require</b> exceptions to be enabled. If you prefer to build your projects with <span class="tt">-fno-exceptions</span>, you can still use the other ways.</dd></dl>
+Moreover, in each case, you can provide either some string type for the file's path, or you can use an existing, valid file handle.</li>
 </ul>
-<p>Moreover, in each case, you can provide either some string type for the file's path, or you can use an existing, valid file handle.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="mmap_8hpp.html">mio/mmap.hpp</a>&gt;</span></div>
-<div class="line"><span class="comment">// #include &lt;mio/mio.hpp&gt; if using single header</span></div>
-<div class="line"><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;mio/mio.hpp&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
@@ -178,13 +164,12 @@ How to create a mapping</h3>
 <div class="line">    <a class="code hl_typedef" href="namespacemio.html#a16e95fe46bbad947821a1c4d58c80b84">mio::mmap_source</a> mmap(fd, 0, <a class="code hl_enumvalue" href="namespacemio.html#a171b79c926b315b6939b206ad64869f5af46f1a6ab1149ea0286c9d7ff8a36338">mio::map_entire_file</a>);</div>
 <div class="line">    <span class="comment">// ...</span></div>
 <div class="line">}</div>
-<div class="ttc" id="ammap_8hpp_html"><div class="ttname"><a href="mmap_8hpp.html">mmap.hpp</a></div></div>
 <div class="ttc" id="anamespacemio_html_a171b79c926b315b6939b206ad64869f5af46f1a6ab1149ea0286c9d7ff8a36338"><div class="ttname"><a href="namespacemio.html#a171b79c926b315b6939b206ad64869f5af46f1a6ab1149ea0286c9d7ff8a36338">mio::map_entire_file</a></div><div class="ttdeci">@ map_entire_file</div><div class="ttdef"><b>Definition</b> mmap.hpp:68</div></div>
 </div><!-- fragment --><p> However, mio does not check whether the provided file descriptor has the same access permissions as the desired mapping, so the mapping may fail. Such errors are reported via the <span class="tt">std::error_code</span> out parameter that is passed to the mapping function.</p>
-<p><b>WINDOWS USERS</b>: This library <em>does</em> support the use of wide character types for functions where character strings are expected (e.g. path parameters).</p>
+<dl class="section note"><dt>Note</dt><dd><b>WINDOWS USERS</b>: This library <em>does</em> support the use of wide character types for functions where character strings are expected (e.g. path parameters).</dd></dl>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Example</h3>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mio_8hpp.html">mio.hpp</a>&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;mio/mio.hpp&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"> </div>
@@ -256,12 +241,11 @@ Example</h3>
 <div class="line">    std::string s(size, <span class="charliteral">&#39;0&#39;</span>);</div>
 <div class="line">    file &lt;&lt; s;</div>
 <div class="line">}</div>
-<div class="ttc" id="amio_8hpp_html"><div class="ttname"><a href="mio_8hpp.html">mio.hpp</a></div></div>
 <div class="ttc" id="anamespacemio_html_aa24db79bbb437bf26eba583385c9a9cc"><div class="ttname"><a href="namespacemio.html#aa24db79bbb437bf26eba583385c9a9cc">mio::mmap_sink</a></div><div class="ttdeci">basic_mmap_sink&lt; char &gt; mmap_sink</div><div class="ttdef"><b>Definition</b> mmap.hpp:448</div></div>
 <div class="ttc" id="anamespacemio_html_af5d7d6f67041bd9fbae1ef0fe250b60d"><div class="ttname"><a href="namespacemio.html#af5d7d6f67041bd9fbae1ef0fe250b60d">mio::make_mmap_sink</a></div><div class="ttdeci">mmap_sink make_mmap_sink(const MappingToken &amp;token, mmap_sink::size_type offset, mmap_sink::size_type length, std::error_code &amp;error)</div><div class="ttdef"><b>Definition</b> mmap.hpp:488</div></div>
 <div class="ttc" id="astructmio_1_1basic__mmap_html_a0e1f53d27ffb84277897a1d1039c5708"><div class="ttname"><a href="structmio_1_1basic__mmap.html#a0e1f53d27ffb84277897a1d1039c5708">mio::basic_mmap::end</a></div><div class="ttdeci">iterator end() noexcept</div><div class="ttdef"><b>Definition</b> mmap.hpp:245</div></div>
 <div class="ttc" id="astructmio_1_1basic__mmap_html_a84ebe9e1875ad27851748a9674defcda"><div class="ttname"><a href="structmio_1_1basic__mmap.html#a84ebe9e1875ad27851748a9674defcda">mio::basic_mmap::begin</a></div><div class="ttdeci">iterator begin() noexcept</div><div class="ttdef"><b>Definition</b> mmap.hpp:233</div></div>
-</div><!-- fragment --><p><span class="tt"><a class="el" href="structmio_1_1basic__mmap.html">mio::basic_mmap</a></span> is move-only, but if multiple copies to the same mapping are needed, use <span class="tt"><a class="el" href="classmio_1_1basic__shared__mmap.html">mio::basic_shared_mmap</a></span> which has <span class="tt">std::shared_ptr</span> semantics and has the same interface as <span class="tt"><a class="el" href="structmio_1_1basic__mmap.html">mio::basic_mmap</a></span>. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="shared__mmap_8hpp.html">mio/shared_mmap.hpp</a>&gt;</span></div>
+</div><!-- fragment --><p><span class="tt"><a class="el" href="structmio_1_1basic__mmap.html">mio::basic_mmap</a></span> is move-only, but if multiple copies to the same mapping are needed, use <span class="tt"><a class="el" href="classmio_1_1basic__shared__mmap.html">mio::basic_shared_mmap</a></span> which has <span class="tt">std::shared_ptr</span> semantics and has the same interface as <span class="tt"><a class="el" href="structmio_1_1basic__mmap.html">mio::basic_mmap</a></span>. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;mio/mio.hpp&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="namespacemio.html#abfdbe8a7a9bad7666e05cb2f774df6fd">mio::shared_mmap_source</a> shared_mmap1(<span class="stringliteral">&quot;path&quot;</span>, offset, size_to_map);</div>
 <div class="line"><a class="code hl_typedef" href="namespacemio.html#abfdbe8a7a9bad7666e05cb2f774df6fd">mio::shared_mmap_source</a> shared_mmap2(std::move(mmap1)); <span class="comment">// or use operator=</span></div>
@@ -270,7 +254,6 @@ Example</h3>
 <div class="line">shared_mmap4.<a class="code hl_function" href="classmio_1_1basic__shared__mmap.html#a80be05fbd97eb1ddf5a9572633a05c6e">map</a>(<span class="stringliteral">&quot;path&quot;</span>, offset, size_to_map, error);</div>
 <div class="ttc" id="aclassmio_1_1basic__shared__mmap_html_a80be05fbd97eb1ddf5a9572633a05c6e"><div class="ttname"><a href="classmio_1_1basic__shared__mmap.html#a80be05fbd97eb1ddf5a9572633a05c6e">mio::basic_shared_mmap::map</a></div><div class="ttdeci">void map(const String &amp;path, const size_type &amp;offset, const size_type &amp;length, std::error_code &amp;error)</div><div class="ttdef"><b>Definition</b> shared_mmap.hpp:269</div></div>
 <div class="ttc" id="anamespacemio_html_abfdbe8a7a9bad7666e05cb2f774df6fd"><div class="ttname"><a href="namespacemio.html#abfdbe8a7a9bad7666e05cb2f774df6fd">mio::shared_mmap_source</a></div><div class="ttdeci">basic_shared_mmap_source&lt; char &gt; shared_mmap_source</div><div class="ttdef"><b>Definition</b> shared_mmap.hpp:414</div></div>
-<div class="ttc" id="ashared__mmap_8hpp_html"><div class="ttname"><a href="shared__mmap_8hpp.html">shared_mmap.hpp</a></div></div>
 </div><!-- fragment --><p>It's possible to define the type of a byte (which has to be the same width as <span class="tt">char</span>), though aliases for the most common ones are provided by default: </p><div class="fragment"><div class="line"><span class="keyword">using </span>mmap_source = basic_mmap_source&lt;char&gt;;</div>
 <div class="line"><span class="keyword">using </span>ummap_source = basic_mmap_source&lt;unsigned char&gt;;</div>
 <div class="line"> </div>
@@ -283,9 +266,8 @@ Example</h3>
 </div><!-- fragment --><p>Though generally not needed, since mio maps users requested offsets to page boundaries, you can query the underlying system's page allocation granularity by invoking <span class="tt"><a class="el" href="namespacemio.html#a5fa19e76f930339fbeb51ad691b0bfd3">mio::page_size()</a></span>, which is located in <span class="tt"><a class="el" href="page_8hpp.html">mio/page.hpp</a></span>.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Single Header File</h3>
-<p>Mio can be added to your project as a single header file simply by including <span class="tt">\single_include\<a class="el" href="namespacemio.html">mio</a>\<a class="el" href="mio_8hpp.html">mio.hpp</a></span>. Single header files can be regenerated at any time by running the <span class="tt">amalgamate.py</span> script within <span class="tt">\third_party</span>. <br  />
-</p>
-<div class="fragment"><div class="line">python amalgamate.py -c config.json -s ../include</div>
+<p>Mio can be added to your project as a single header file simply by including <a href="/single_include/mio/mio.hpp">mio.hpp</a>. Single header files can be regenerated at any time by running the <a href="third_party/amalgamate/amalgamate.py">amalgamate.py</a> script within <a href="/third_party/">\third_party</a> directory.</p>
+<div class="fragment"><div class="line">python ./third_party/amalgamate/amalgamate.py -v -c ./third_party/amalgamate/config.json -s ./include/ -t ./single_include/mio/mio.hpp</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 CMake</h2>
 <p>As a header-only library, mio has no compiled components. Nevertheless, a <a href="https://cmake.org/overview/">CMake</a> build system is provided to allow easy testing, installation, and subproject composition on many platforms and operating systems.</p>
@@ -361,7 +343,7 @@ Installation</h3>
 <p>This latter step allows downstream CMake projects to consume mio via <span class="tt">find_package</span>, e.g.</p>
 <div class="fragment"><div class="line">find_package( mio REQUIRED )</div>
 <div class="line">target_link_libraries( MyTarget PUBLIC mio::mio )</div>
-</div><!-- fragment --><p><b>WINDOWS USERS</b>: The <span class="tt">mio::mio</span> target <span class="tt">#define</span>s <span class="tt">WIN32_LEAN_AND_MEAN</span> and <span class="tt">NOMINMAX</span>. The former ensures the imported surface area of the Win API is minimal, and the latter disables Windows' <span class="tt">min</span> and <span class="tt">max</span> macros so they don't intefere with <span class="tt">std::min</span> and <span class="tt">std::max</span>. Because <em>mio</em> is a header only library, these defintions will leak into downstream CMake builds. If their presence is causing problems with your build then you can use the alternative <span class="tt">mio::mio_full_winapi</span> target, which adds none of these defintions.</p>
+</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd><b>WINDOWS USERS</b>: The <span class="tt">mio::mio</span> target <span class="tt">#define</span>s <span class="tt">WIN32_LEAN_AND_MEAN</span> and <span class="tt">NOMINMAX</span>. The former ensures the imported surface area of the Win API is minimal, and the latter disables Windows' <span class="tt">min</span> and <span class="tt">max</span> macros so they don't intefere with <span class="tt">std::min</span> and <span class="tt">std::max</span>. Because <em>mio</em> is a header only library, these defintions will leak into downstream CMake builds. If their presence is causing problems with your build then you can use the alternative <span class="tt">mio::mio_full_winapi</span> target, which adds none of these defintions.</dd></dl>
 <p>If mio was installed to a non-conventional location, it may be necessary for downstream projects to specify the mio installation root directory via either</p>
 <ul>
 <li>the <span class="tt">CMAKE_PREFIX_PATH</span> configuration option,</li>
